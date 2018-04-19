@@ -81,12 +81,13 @@ class Api
 
     $response = curl_exec($ch);
     $result = json_decode($response);
-    var_dump($result);
     curl_close($ch);
 
     if (empty($result) || !$result->success) {
       throw new \Exception("Pipedrive API error!");
     }
+
+    return $result;
   }
 
   /**
