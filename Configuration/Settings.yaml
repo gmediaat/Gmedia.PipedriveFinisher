@@ -1,8 +1,26 @@
+GradinaruFelix:
+  Pipedrive:
+    Form:
+      Finisher:
+        Activity:
+          defaultValue: 'call'
 Neos:
   Form:
     presets:
       default:
         finisherPresets:
+          'GradinaruFelix.Pipedrive:ActivityFinisher':
+            implementationClassName: GradinaruFelix\Pipedrive\Finishers\ActivityFinisher
+            options: {  }
+          'GradinaruFelix.Pipedrive:DealFinisher':
+            implementationClassName: GradinaruFelix\Pipedrive\Finishers\DealFinisher
+            options: {  }
+          'GradinaruFelix.Pipedrive:NoteFinisher':
+            implementationClassName: GradinaruFelix\Pipedrive\Finishers\NoteFinisher
+            options: {  }
+          'GradinaruFelix.Pipedrive:OrganizationFinisher':
+            implementationClassName: GradinaruFelix\Pipedrive\Finishers\OrganizationFinisher
+            options: {  }
           'GradinaruFelix.Pipedrive:PersonFinisher':
             implementationClassName: GradinaruFelix\Pipedrive\Finishers\PersonFinisher
             options: {  }
