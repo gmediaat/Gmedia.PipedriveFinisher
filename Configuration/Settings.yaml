@@ -1,0 +1,8 @@
+Neos:
+  Form:
+    presets:
+      default:
+        finisherPresets:
+          'GradinaruFelix.Pipedrive:PersonFinisher':
+            implementationClassName: GradinaruFelix\Pipedrive\Finishers\PersonFinisher
+            options: {  }

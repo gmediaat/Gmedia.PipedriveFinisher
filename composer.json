@@ -1,0 +1,19 @@
+{
+    "description": "A package providing finishers for Neos.Form for the Pipedrive CRM",
+    "type": "neos-package",
+    "name": "gradinarufelix/pipedrive",
+    "require": {
+        "neos/flow": "*",
+        "neos/form": "~4.1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "GradinaruFelix\\Pipedrive\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "GradinaruFelix.Pipedrive"
+        }
+    }
+}
