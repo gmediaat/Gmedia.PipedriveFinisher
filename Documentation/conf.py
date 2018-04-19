@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'FelixGradinaru.PipedriveFinisher'
+project = u'Neos CMS Pipedrive Implementation'
 copyright = u'2018 and onwards by the authors'
 author = u'Author and Contributors'
 

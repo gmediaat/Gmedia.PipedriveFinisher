@@ -1,7 +1,7 @@
-FelixGradinaru.PipedriveFinisher |version| Documentation
+Pipedrive CRM Integration for Neos CMS
 ==================================================================================================
 
-This documentation covering version |release| has been rendered at: |today|
+This package enables you to use functions of the Pipedrive CRM API (http://www.pipedrive.com) in Neos CMS.
 
 Introduction
 ------------
