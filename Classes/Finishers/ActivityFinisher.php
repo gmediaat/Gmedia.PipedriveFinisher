@@ -7,7 +7,7 @@ use Neos\Form\Exception\FinisherException;
 use GradinaruFelix\Pipedrive\Utility\Api as PipedriveApi;
 
 /**
- * This finisher sends an email to one or more recipients
+ * This finisher creates a activity in Pipedrive
  */
 
 class ActivityFinisher extends AbstractFinisher
