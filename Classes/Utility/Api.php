@@ -74,7 +74,6 @@ class Api
   {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $this->getURI());
-    var_dump($this->getURI());
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $this->data);

@@ -2,20 +2,28 @@
 namespace GradinaruFelix\Pipedrive\Finishers;
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Form\Core\Model\AbstractFinisher;
 use Neos\Form\Exception\FinisherException;
+use GradinaruFelix\Pipedrive\AbstractFinisher;
 use GradinaruFelix\Pipedrive\Utility\Api as PipedriveApi;
 
 /**
- * This finisher sends an email to one or more recipients
+ * This finisher creates a note in Pipedrive
  */
 
 class NoteFinisher extends AbstractFinisher
 {
 
-    const OMITTED_OPTIONS = array(
-      'testMode',
-    );
+    /**
+     * API endpoint name
+     * @var String
+     */
+    protected $apiEndpoint = 'notes';
+
+    /**
+     * Name of the scope
+     * @var String
+     */
+    protected $scope = 'Note';
 
     /**
      * @var array
@@ -43,17 +51,10 @@ class NoteFinisher extends AbstractFinisher
           }
         }
 
-        $apiUtility = new PipedriveApi('notes');
-        $apiUtility->setData($data);
-
-        $formState = $this->finisherContext->getFormRuntime()->getFormState();
-
         if ($testMode === true) {
-
+          \Neos\Flow\var_dump($data);
         } else {
-          $response = $apiUtility->execute();
-          $formState->setFormValue("Pipedrive.ActivityFinisher.ID", $response->data->id);
-          print_r($formState->getFormValues());
+          $this->callAPI($data);
         }
     }
 }

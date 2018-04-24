@@ -2,20 +2,16 @@
 namespace GradinaruFelix\Pipedrive\Finishers;
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Form\Core\Model\AbstractFinisher;
 use Neos\Form\Exception\FinisherException;
+use GradinaruFelix\Pipedrive\AbstractFinisher;
 use GradinaruFelix\Pipedrive\Utility\Api as PipedriveApi;
 
 /**
- * This finisher creates a activity in Pipedrive
+ * This finisher creates an activity in Pipedrive
  */
 
 class ActivityFinisher extends AbstractFinisher
 {
-
-    const OMITTED_OPTIONS = array(
-      'testMode',
-    );
 
     /**
      * Default activity type
@@ -25,11 +21,24 @@ class ActivityFinisher extends AbstractFinisher
     protected $defaultType = '';
 
     /**
+     * API endpoint name
+     * @var String
+     */
+    protected $apiEndpoint = 'activities';
+
+    /**
+     * Name of the scope
+     * @var String
+     */
+    protected $scope = 'Activity';
+
+    /**
      * @var array
      */
     protected $defaultOptions = array(
         'subject' => '',
         'done' => true,
+        'identifier' => '',
         'testMode' => false,
     );
 
@@ -54,17 +63,10 @@ class ActivityFinisher extends AbstractFinisher
           }
         }
 
-        $apiUtility = new PipedriveApi('activities');
-        $apiUtility->setData($data);
-
-        $formState = $this->finisherContext->getFormRuntime()->getFormState();
-
         if ($testMode === true) {
-
+          \Neos\Flow\var_dump($data);
         } else {
-          $response = $apiUtility->execute();
-          $formState->setFormValue("Pipedrive.ActivityFinisher.ID", $response->data->id);
-          print_r($formState->getFormValues());
+          $this->callAPI($data);
         }
     }
 }

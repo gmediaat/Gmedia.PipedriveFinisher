@@ -1,8 +1,8 @@
 <?php
 namespace GradinaruFelix\Pipedrive\Finishers;
 
-use Neos\Form\Core\Model\AbstractFinisher;
 use Neos\Form\Exception\FinisherException;
+use GradinaruFelix\Pipedrive\AbstractFinisher;
 use GradinaruFelix\Pipedrive\Utility\Api as PipedriveApi;
 
 /**
@@ -12,9 +12,17 @@ use GradinaruFelix\Pipedrive\Utility\Api as PipedriveApi;
 class PersonFinisher extends AbstractFinisher
 {
 
-    const OMITTED_OPTIONS = array(
-      'testMode',
-    );
+    /**
+     * API endpoint name
+     * @var String
+     */
+    protected $apiEndpoint = 'persons';
+
+    /**
+     * Name of the scope
+     * @var String
+     */
+    protected $scope = 'Person';
 
     /**
      * @var array
@@ -42,17 +50,10 @@ class PersonFinisher extends AbstractFinisher
           }
         }
 
-        $apiUtility = new PipedriveApi('persons');
-        $apiUtility->setData($data);
-
-        $formState = $this->finisherContext->getFormRuntime()->getFormState();
-
         if ($testMode === true) {
-
+          \Neos\Flow\var_dump($data);
         } else {
-          $response = $apiUtility->execute();
-          $formState->setFormValue("Pipedrive.PersonFinisher.ID", $response->data->id);
-          print_r($formState->getFormValues());
+          $this->callAPI($data);
         }
     }
 }
