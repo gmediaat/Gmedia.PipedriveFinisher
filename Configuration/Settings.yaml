@@ -1,5 +1,8 @@
-GradinaruFelix:
-  Pipedrive:
+Gmedia:
+  PipedriveFinisher:
+    Api:
+      Domain: ''
+      Token: ''
     Form:
       Finisher:
         Activity:

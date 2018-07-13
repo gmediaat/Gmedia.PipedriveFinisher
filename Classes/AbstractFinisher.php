@@ -48,7 +48,6 @@ abstract class AbstractFinisher extends NeosFormAbstractFinisher
       return true;
     } else {
       throw new FinisherException("Something went wrong while calling the API!");
-      return false;
     }
   }
 
