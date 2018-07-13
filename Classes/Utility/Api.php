@@ -1,5 +1,5 @@
 <?php
-namespace GradinaruFelix\Pipedrive\Utility;
+namespace Gmedia\PipedriveFinisher\Utility;
 
 use Neos\Flow\Annotations as Flow;
 

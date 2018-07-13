@@ -12,18 +12,18 @@ Neos:
     presets:
       default:
         finisherPresets:
-          'GradinaruFelix.Pipedrive:ActivityFinisher':
-            implementationClassName: GradinaruFelix\Pipedrive\Finishers\ActivityFinisher
+          'Gmedia.PipedriveFinisher:ActivityFinisher':
+            implementationClassName: Gmedia\PipedriveFinisher\Finishers\ActivityFinisher
             options: {  }
-          'GradinaruFelix.Pipedrive:DealFinisher':
-            implementationClassName: GradinaruFelix\Pipedrive\Finishers\DealFinisher
+          'Gmedia.PipedriveFinisher:DealFinisher':
+            implementationClassName: Gmedia\PipedriveFinisher\Finishers\DealFinisher
             options: {  }
-          'GradinaruFelix.Pipedrive:NoteFinisher':
-            implementationClassName: GradinaruFelix\Pipedrive\Finishers\NoteFinisher
+          'Gmedia.PipedriveFinisher:NoteFinisher':
+            implementationClassName: Gmedia\PipedriveFinisher\Finishers\NoteFinisher
             options: {  }
-          'GradinaruFelix.Pipedrive:OrganizationFinisher':
-            implementationClassName: GradinaruFelix\Pipedrive\Finishers\OrganizationFinisher
+          'Gmedia.PipedriveFinisher:OrganizationFinisher':
+            implementationClassName: Gmedia\PipedriveFinisher\Finishers\OrganizationFinisher
             options: {  }
-          'GradinaruFelix.Pipedrive:PersonFinisher':
-            implementationClassName: GradinaruFelix\Pipedrive\Finishers\PersonFinisher
+          'Gmedia.PipedriveFinisher:PersonFinisher':
+            implementationClassName: Gmedia\PipedriveFinisher\Finishers\PersonFinisher
             options: {  }

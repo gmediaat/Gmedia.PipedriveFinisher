@@ -1,0 +1,78 @@
+type: 'Neos.Form:Form'
+identifier: contact-form
+label: 'Contact form'
+renderingOptions:
+  submitButtonLabel: 'Send'
+renderables:
+  -
+    type: 'Neos.Form:Page'
+    identifier: page-one
+    label: 'Contact'
+    renderables:
+      -
+        type: 'Neos.Form:SingleLineText'
+        identifier: name
+        label: 'Name'
+        validators:
+          - identifier: 'Neos.Flow:NotEmpty'
+        properties:
+          placeholder: 'Name'
+        defaultValue: ''
+      -
+        type: 'Neos.Form:SingleLineText'
+        identifier: email
+        label: 'Email'
+        validators:
+          - identifier: 'Neos.Flow:NotEmpty'
+          - identifier: 'Neos.Flow:EmailAddress'
+        properties:
+          placeholder: 'Email'
+        defaultValue: ''
+      -
+        type: 'Neos.Form:MultiLineText'
+        identifier: message
+        label: 'Message'
+        validators:
+          - identifier: 'Neos.Flow:NotEmpty'
+        properties:
+          placeholder: 'Your Message'
+        defaultValue: ''
+finishers:
+  -
+    identifier: 'Gmedia.PipedriveFinisher:OrganizationFinisher'
+    options:
+      name: "{name}'s company"
+  -
+    identifier: 'Gmedia.PipedriveFinisher:PersonFinisher'
+    options:
+      name: '{name}'
+      email: '{email}'
+      org_id: '{Pipedrive.OrganizationFinisher.ID}'
+      acb74ab590c33cf90c9428945bbb4b714b9dd19b: '{email}'
+  -
+    identifier: 'Gmedia.PipedriveFinisher:DealFinisher'
+    options:
+      title: "{name}'s Deal'"
+      person_id: "{Pipedrive.PersonFinisher.ID}"
+      org_id: "{Pipedrive.OrganizationFinisher.ID}"
+  -
+    identifier: 'Gmedia.PipedriveFinisher:NoteFinisher'
+    options:
+      content: "{message}"
+      person_id: "{Pipedrive.PersonFinisher.ID}"
+      org_id: "{Pipedrive.OrganizationFinisher.ID}"
+      deal_id: "{Pipedrive.DealFinisher.ID}"
+  -
+    identifier: 'Gmedia.PipedriveFinisher:ActivityFinisher'
+    options:
+      subject: "{message} 1"
+      person_id: "{Pipedrive.PersonFinisher.ID}"
+      org_id: "{Pipedrive.OrganizationFinisher.ID}"
+      deal_id: "{Pipedrive.DealFinisher.ID}"
+  -
+    identifier: 'Neos.Form:Confirmation'
+    options:
+      message: >
+        <h3>Thank you for your feedback!</h3>
+        {name} {Pipedrive.Person.ID}
+        <p>Your email would have been sent. It's easy to create custom forms with the Neos.Form package.</p>

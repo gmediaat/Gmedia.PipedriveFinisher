@@ -1,10 +1,9 @@
 <?php
-namespace GradinaruFelix\Pipedrive\Finishers;
+namespace Gmedia\PipedriveFinisher\Finishers;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Form\Exception\FinisherException;
-use GradinaruFelix\Pipedrive\AbstractFinisher;
-use GradinaruFelix\Pipedrive\Utility\Api as PipedriveApi;
+use Gmedia\PipedriveFinisher\AbstractFinisher;
 
 /**
  * This finisher creates a deal in Pipedrive

@@ -1,5 +1,5 @@
 {
-    "description": "A package providing finishers for Neos.Form for the Pipedrive CRM",
+    "description": "A Neos.Form finisher for the Pipedrive CRM",
     "type": "neos-package",
     "name": "gmedia/pipedrivefinisher",
     "version": "1.0.1",

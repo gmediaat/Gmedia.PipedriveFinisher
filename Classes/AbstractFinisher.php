@@ -1,10 +1,10 @@
 <?php
-namespace GradinaruFelix\Pipedrive;
+namespace Gmedia\PipedriveFinisher;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Form\Core\Model\AbstractFinisher as NeosFormAbstractFinisher;
 use Neos\Form\Exception\FinisherException;
-use GradinaruFelix\Pipedrive\Utility\Api as PipedriveApi;
+use Gmedia\PipedriveFinisher\Utility\Api as PipedriveApi;
 
 abstract class AbstractFinisher extends NeosFormAbstractFinisher
 {
